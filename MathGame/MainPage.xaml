@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="MathGame.MainPage">
+
+    <ScrollView>
+        <VerticalStackLayout Padding="15" Spacing="10">
+
+            <Label Text="Desafio Matemático"
+                   FontSize="32"
+                   HorizontalOptions="Center"/>
+
+            <Image Source="mathlogo.png" Aspect="Center" HorizontalOptions="Center"/>
+
+            <Label Text="Selecione a dificuldade"
+                   FontSize="18"
+                   HorizontalOptions="Center"/>
+
+            <Picker x:Name="Operations" Title="Selecione o nível" SelectedIndexChanged="Operations_SelectedIndexChanged">
+                <Picker.Items>
+                    <x:String>Fácil</x:String>
+                    <x:String>Médio</x:String>
+                    <x:String>Difícil</x:String>
+                </Picker.Items>
+            </Picker>
+
+            <HorizontalStackLayout HorizontalOptions="Center" Spacing="10">
+                <Label x:Name="lb1" FontSize="30" Text="5" IsVisible="false"/>
+                <Label x:Name="lb2" FontSize="30" Text="+" IsVisible="false"/>
+                <Label x:Name="lb3" FontSize="30" Text="3" IsVisible="false"/>
+            </HorizontalStackLayout>
+
+            <Entry x:Name="txR" Placeholder="Digite aqui a resposta" Keyboard="Numeric" IsVisible="false"/>
+            <Button x:Name="btOK" Text="Responder" Clicked="btOK_Clicked" IsVisible="false"/>
+
+            <Image x:Name="imgR" Source="question.png" Aspect="Center" IsVisible="false"/>
+
+            <Label x:Name="Points" FontSize="24" Text="Pontuação: 0" HorizontalOptions="Center" IsVisible="false"/>
+            <Label x:Name="RoundLabel" FontSize="18" Text="0/10" HorizontalOptions="Center" IsVisible="false"/>
+            <Label x:Name="TimerLabel" FontSize="20" Text="Tempo: 30s" HorizontalOptions="Center" IsVisible="false"/>
+
+        </VerticalStackLayout>
+    </ScrollView>
+
+</ContentPage>
